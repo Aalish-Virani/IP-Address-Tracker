@@ -1,7 +1,4 @@
-IP Address Tracker - Frontend Mentor
-
-I have built this Web app as a part of Frontend Mentor Challenge.
-I have used HTML, TAILWIND CSS along with APIs to rendor the details of IP addresses.
+IP Address Tracker - Frontend Mentor Challenge
 
 About Challenge: 
 The challenge is to build out the IP Address Tracker app and get it looking as close to the design as possible. 
@@ -13,3 +10,7 @@ The users should be able to:
 2. Search for any IP addresses or domains and see the key information and location
 3. View the optimal layout for each page depending on their device's screen size
 4. See hover states for all interactive elements on the page.
+
+Solution:
+HTML and tailwind CSS is used to design a responsive web page.
+Morover, APIs are used to rendor the details of IP addresses along with map generation.
