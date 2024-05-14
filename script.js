@@ -9,37 +9,19 @@ let loc = document.getElementById("location");
 let time = document.getElementById("timezone");
 let isp = document.getElementById("isp");
 
-
-
-
-
-
-
-
 // User Device IP Address - on page load ------------------------------------------------------------------------
 
 document.addEventListener('DOMContentLoaded', ()=> {
-
   updateInfo();
 })
 
-
-
-
 // User Input IP Address -------------------------------------------------------------------------
-
-
 
 // input by clicking button ----------------------------------------------------------------------
 
 inputBtn.addEventListener("click", (e) => {
-
   validateIp();
-
 });
-
-
-
 
 // input by enter key -----------------------------------------------------------------------------
 
@@ -50,14 +32,7 @@ userInput.addEventListener("keydown", (e)=> {
     validateIp();
   }
 
-
-
 })
-
-
-
-
-
 
 // validate ipAdress ---------------------------------------------------------------------------
 
@@ -70,9 +45,6 @@ let validateIp = () => {
   }
 
 }
-
-
-
 
 // fetching info using API ----------------------------------------------------------------------
 
@@ -97,13 +69,6 @@ let updateInfo = async () => {
       invalidInput();
     }
 };
-
-
-
-
-
-
-
 
 // Map using Leaflet JS API-------------------------------------------------------------------------------------
 
@@ -130,20 +95,9 @@ let generateMap = (latitude,longitude) => {
     
 }
 
-
-
-
-
-
-
 // invalidInput -------------------------------------------------------------------------------------
 
 let invalidInput = () => {
-    console.log("ERROR - PLEASE ENTER VALID ADDRESS OR DOMAIN");
+  console.log("ERROR - PLEASE ENTER VALID ADDRESS OR DOMAIN");
+  alert("Invalid IP Address !");
 }
-
-
-
-
-
-
