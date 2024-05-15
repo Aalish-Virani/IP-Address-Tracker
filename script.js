@@ -77,8 +77,10 @@ let marker;
 
 let generateMap = (latitude,longitude) => {
 
-  if(!map){
-   map = L.map('map');
+  const isMobile = window.innerWidth <= 768;
+
+  if (!map) {
+    map = L.map("map", { zoomControl: !isMobile });
   }
     map.setView([latitude, longitude], 17);
 
