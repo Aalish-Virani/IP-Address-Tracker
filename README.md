@@ -13,4 +13,6 @@ The users should be able to:
 
 Solution:
 HTML and tailwind CSS is used to design a responsive web page.
-Morover, APIs are used to rendor the details of IP addresses along with map generation.
+Morover, REST APIs are used to rendor the details of IP addresses along with map generation.
+
+Try it Live! - https://aalish-virani.github.io/IP-Address-Tracker/
