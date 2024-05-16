@@ -11,12 +11,11 @@ let isp = document.getElementById("isp");
 
 // User Device IP Address - on page load ------------------------------------------------------------------------
 
-document.addEventListener('DOMContentLoaded', ()=> {
+document.addEventListener("DOMContentLoaded", () => {
   updateInfo();
-})
+});
 
 // User Input IP Address -------------------------------------------------------------------------
-
 // input by clicking button ----------------------------------------------------------------------
 
 inputBtn.addEventListener("click", (e) => {
@@ -25,26 +24,21 @@ inputBtn.addEventListener("click", (e) => {
 
 // input by enter key -----------------------------------------------------------------------------
 
-userInput.addEventListener("keydown", (e)=> {
-
-  if(e.keyCode === 13){
+userInput.addEventListener("keydown", (e) => {
+  if (e.keyCode === 13) {
     userInput.blur();
     validateIp();
   }
-
-})
+});
 
 // validate ipAdress ---------------------------------------------------------------------------
 
 let validateIp = () => {
-
   ipAddress = userInput.value;
-
   if (ipAddress != "") {
     updateInfo();
   }
-
-}
+};
 
 // fetching info using API ----------------------------------------------------------------------
 
@@ -53,7 +47,15 @@ let updateInfo = async () => {
   let response = await fetch(URL);
   let data = await response.json();
 
-  if (response.status == 200){ 
+  console.log(data);
+
+  if (response.status == 200) {
+    if (data.location.country == "ZZ") {
+      ip.textContent = "Invalid Address!";
+      isp.textContent = " ";
+      loc.textContent = " ";
+      time.textContent = " ";
+    } else {
       ip.textContent = data.ip;
       isp.textContent = data.isp;
       loc.textContent = data.location.city + ", " + data.location.country;
@@ -62,12 +64,11 @@ let updateInfo = async () => {
       let lat = data.location.lat;
       let lng = data.location.lng;
 
-      generateMap(lat,lng);
+      generateMap(lat, lng);
     }
-
-    else{
-      invalidInput();
-    }
+  } else {
+    invalidInput();
+  }
 };
 
 // Map using Leaflet JS API-------------------------------------------------------------------------------------
@@ -75,31 +76,27 @@ let updateInfo = async () => {
 let map;
 let marker;
 
-let generateMap = (latitude,longitude) => {
-
+let generateMap = (latitude, longitude) => {
   const isMobile = window.innerWidth <= 768;
 
   if (!map) {
     map = L.map("map", { zoomControl: !isMobile });
   }
-    map.setView([latitude, longitude], 17);
 
-    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-      maxZoom: 19,
-      attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-    }).addTo(map);
+  map.setView([latitude, longitude], 17);
+  L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+    maxZoom: 19,
+    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+  }).addTo(map);
 
-
-  if (marker){
+  if (marker) {
     map.removeLayer(marker);
   }
   marker = L.marker([latitude, longitude]).addTo(map);
-    
-}
+};
 
 // invalidInput -------------------------------------------------------------------------------------
 
 let invalidInput = () => {
   console.log("ERROR - PLEASE ENTER VALID ADDRESS OR DOMAIN");
-  alert("Invalid IP Address !");
-}
+};
