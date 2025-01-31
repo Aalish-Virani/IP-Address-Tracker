@@ -1,4 +1,6 @@
-const BASE_URL = "https://geo.ipify.org/api/v2/country,city?apiKey=at_3xkaA5UMUdpGLdNUmcf1GKhwouSS0&ipAddress=";
+const API = "at_bxKuor3Kw7RD7eWh159wAlCmA2Ij1";
+
+const BASE_URL = `https://geo.ipify.org/api/v2/country,city?apiKey=${API}&ipAddress=`;
 
 let inputBtn = document.getElementById("btn");
 let userInput = document.getElementById("user-input");
