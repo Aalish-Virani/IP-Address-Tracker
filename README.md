@@ -17,11 +17,6 @@ Morover, REST APIs are used to rendor the details of IP addresses along with map
 
 Try it Live! - https://aalish-virani.github.io/IP-Address-Tracker/
 
-Mobile View:
-![image alt](https://github.com/Aalish-Virani/IP-Address-Tracker/blob/main/demo/mobile-view.png?raw=true)
+![image alt](https://github.com/Aalish-Virani/IP-Address-Tracker/blob/main/demo/mobile-view.png?raw=true) ![image alt](https://github.com/Aalish-Virani/IP-Address-Tracker/blob/main/demo/tablet-view.png?raw=true)
 
-Tablet View:
-![image alt](https://github.com/Aalish-Virani/IP-Address-Tracker/blob/main/demo/tablet-view.png?raw=true)
-
-Desktop View:
 ![image alt](https://github.com/Aalish-Virani/IP-Address-Tracker/blob/main/demo/desktop-view.png?raw=true)
